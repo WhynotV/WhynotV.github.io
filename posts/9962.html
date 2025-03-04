@@ -1,0 +1,1183 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>智能机器人 | Whynot'Blog</title><meta name="author" content="咕咕"><meta name="copyright" content="咕咕"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="机器人系统基础  机械臂结构机械臂分类与作用 机械手臂分类  空间几何运动形式  直角坐标系型  PPP的作业空间是一个长方形  优点：构造相对简单，经济成本低，控制简单。 缺点：机械臂的移动只能是直线，或者说是折线，运动不灵活。     圆柱坐标系型  圆柱坐标型机械臂  优点：直观性更好，结构简单，机械臂所占空间小且在空间中运动辐射范围大、 缺点：灵活度有一定局限性。     球坐标系型  球">
+<meta property="og:type" content="article">
+<meta property="og:title" content="智能机器人">
+<meta property="og:url" content="https://whynotv.github.io/posts/9962.html">
+<meta property="og:site_name" content="Whynot&#39;Blog">
+<meta property="og:description" content="机器人系统基础  机械臂结构机械臂分类与作用 机械手臂分类  空间几何运动形式  直角坐标系型  PPP的作业空间是一个长方形  优点：构造相对简单，经济成本低，控制简单。 缺点：机械臂的移动只能是直线，或者说是折线，运动不灵活。     圆柱坐标系型  圆柱坐标型机械臂  优点：直观性更好，结构简单，机械臂所占空间小且在空间中运动辐射范围大、 缺点：灵活度有一定局限性。     球坐标系型  球">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://whynotv.github.io/img/bizhi.jpg">
+<meta property="article:published_time" content="2024-06-24T10:24:25.000Z">
+<meta property="article:modified_time" content="2024-06-25T00:25:51.848Z">
+<meta property="article:author" content="咕咕">
+<meta property="article:tag" content="复习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://whynotv.github.io/img/bizhi.jpg"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://whynotv.github.io/posts/9962.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '智能机器人',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-06-25 08:25:51'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/equipment.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-blog@2.0.4/css/runtime/runtime.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.css" /><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.2.0"><link rel="alternate" href="/atom.xml" title="Whynot'Blog" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (true) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/pingu.JPG" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 类别</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%8A%80%E6%9C%AF/"><i class="fa-fw fas fa-laptop"></i><span> 技术</span></a></li><li><a class="site-page child" href="/categories/%E7%94%9F%E6%B4%BB/"><i class="fa-fw fas fa-coffee"></i><span> 生活</span></a></li><li><a class="site-page child" href="/categories/%E9%A1%B9%E7%9B%AE/"><i class="fa-fw fas fa-project-diagram"></i><span> 项目</span></a></li><li><a class="site-page child" href="/categories/%E5%A4%8D%E4%B9%A0/"><i class="fa-fw fas fa-book"></i><span> 复习</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> Gallery</span></a></li><li><a class="site-page child" href="/bangumis/"><i class="fa-fw fas fa-video"></i><span> 追番</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-heart"></i><span> About</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></li><li><a class="site-page child" href="/equipment/"><i class="fa-fw fas fa-laptop"></i><span> 我的装备</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/bizhi.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Whynot'Blog"><span class="site-name">Whynot'Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 类别</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%8A%80%E6%9C%AF/"><i class="fa-fw fas fa-laptop"></i><span> 技术</span></a></li><li><a class="site-page child" href="/categories/%E7%94%9F%E6%B4%BB/"><i class="fa-fw fas fa-coffee"></i><span> 生活</span></a></li><li><a class="site-page child" href="/categories/%E9%A1%B9%E7%9B%AE/"><i class="fa-fw fas fa-project-diagram"></i><span> 项目</span></a></li><li><a class="site-page child" href="/categories/%E5%A4%8D%E4%B9%A0/"><i class="fa-fw fas fa-book"></i><span> 复习</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> Gallery</span></a></li><li><a class="site-page child" href="/bangumis/"><i class="fa-fw fas fa-video"></i><span> 追番</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-heart"></i><span> About</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></li><li><a class="site-page child" href="/equipment/"><i class="fa-fw fas fa-laptop"></i><span> 我的装备</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">智能机器人</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-06-24T10:24:25.000Z" title="发表于 2024-06-24 18:24:25">2024-06-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-06-25T00:25:51.848Z" title="更新于 2024-06-25 08:25:51">2024-06-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%A4%8D%E4%B9%A0/">复习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">5.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>15分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="机器人系统基础"><a href="#机器人系统基础" class="headerlink" title="机器人系统基础"></a>机器人系统基础</h1><p><img src="https://raw.githubusercontent.com/WhynotV/tuchuang/main/img/%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80.png" alt="思维导图"></p>
+<p><img src="https://raw.githubusercontent.com/WhynotV/tuchuang/main/img/%E5%A4%9A%E6%BB%A8%E4%B9%A0%E9%A2%98.png" alt="多滨课上习题"></p>
+<h2 id="机械臂结构"><a href="#机械臂结构" class="headerlink" title="机械臂结构"></a>机械臂结构</h2><h3 id="机械臂分类与作用"><a href="#机械臂分类与作用" class="headerlink" title="机械臂分类与作用"></a>机械臂分类与作用</h3><ul>
+<li><p>机械手臂分类</p>
+<ul>
+<li><p>空间几何运动形式</p>
+<ul>
+<li><p>直角坐标系型</p>
+<ul>
+<li><p>PPP的作业空间是一个长方形</p>
+<ul>
+<li>优点：构造相对简单，经济成本低，控制简单。</li>
+<li>缺点：机械臂的移动只能是直线，或者说是折线，运动不灵活。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>圆柱坐标系型</p>
+<ul>
+<li><p>圆柱坐标型机械臂</p>
+<ul>
+<li>优点：直观性更好，结构简单，机械臂所占空间小且在空间中运动辐射范围大、</li>
+<li>缺点：灵活度有一定局限性。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>球坐标系型</p>
+<ul>
+<li><p>球型坐标系机械臂</p>
+<ul>
+<li>优点：灵活性更高，可以相对自由的移动到球体空间的任意位置，动作范围大。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>驱动方式</p>
+<ul>
+<li><p>电气驱动</p>
+<ul>
+<li>电机驱动常采用不同的伺服电机，虽然手臂整体构造比较简单，但仍能实现复杂的运动，并且控制精度高，反应速度也灵敏，智慧化程度很高。能耗一般较小，常用于轻载或中载场合。</li>
+</ul>
+</li>
+<li><p>液压驱动</p>
+<ul>
+<li>液压驱动需要装配电机和液压泵外，还需要需要搭配不同的管道，手臂结构比电机驱动更为复杂。虽然液压驱动智慧化程度低，很难实现复杂的动作，动作也比较迟缓，能耗高，但可以实现大功率，大转矩输出。常用于重载场合。</li>
+</ul>
+</li>
+<li><p>气压驱动</p>
+<ul>
+<li>气压驱动则需要搭载电机和气泵，也需要安装管道，结构也比较复杂。智慧化程度一般，一般实现抓取这类简单的动作，动作迅速，能耗一般，常用于轻载场合。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>机械臂的作用</p>
+<ul>
+<li>1、机械臂可以改善劳动条件，避免人身事故。</li>
+<li>2、可以减轻劳动强度，提高生产效率。实现生产过程中的自动化，智能化。</li>
+<li>3、实现完成人手不能做的工作。</li>
+</ul>
+</li>
+</ul>
+<h3 id="机械臂机构设计"><a href="#机械臂机构设计" class="headerlink" title="机械臂机构设计"></a>机械臂机构设计</h3><ul>
+<li><p>机械臂的组成</p>
+</li>
+<li><ul>
+<li><p>手部</p>
+<ul>
+<li><p>用途</p>
+<ul>
+<li><p>手爪</p>
+<ul>
+<li>手爪的主要功能是抓住工件、握持工件和释放工件。</li>
+</ul>
+</li>
+<li><p>操作工具</p>
+<ul>
+<li>作业工具是进行某种作业的专用工具。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>夹持原理</p>
+<ul>
+<li><p>机械钳爪式</p>
+<ul>
+<li><p>内撑式</p>
+<ul>
+<li></li>
+</ul>
+</li>
+<li><p>外夹式</p>
+<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>吸附式</p>
+<ul>
+<li><p>磁力吸附式</p>
+<ul>
+<li></li>
+</ul>
+</li>
+<li><p>真空吸附式</p>
+<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>腕部</p>
+<ul>
+<li><p>腕部设计分类</p>
+<ul>
+<li>自由度是指机械手各运动部件在三维空间坐标轴上所具有的独立运动数</li>
+<li><p>腕部</p>
+<ul>
+<li><p>单自由度</p>
+<ul>
+<li>回转型R</li>
+<li>俯仰型P</li>
+<li>一般单自由度手腕的运动形式为俯仰型（用字母P表示）或回转型（我们用字母R表示）。单自由度手腕的运动轨迹是一条线。</li>
+</ul>
+</li>
+<li><p>二自由度</p>
+<ul>
+<li>二自由度手腕则是俯仰型和回转型的组合。可以组合成双俯仰型和俯仰回转型，但是不能构成双回转型。二自由度手腕的运动空间是一个面。</li>
+</ul>
+</li>
+<li><p>三自由度</p>
+<ul>
+<li>三自由度手腕同样是俯仰型和回转型的组合。常用的结构PPR,RRR,PRR,RPR。三自由度手腕的运动空间是一个立体空间。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>臂部</p>
+</li>
+<li><p>臂部可由大臂、小臂或多臂所组成，其作用是支撑手部和腕部，并且可以通过伸缩、回转、俯仰和升降等运动改变手部的空间位置。</p>
+<pre><code>  - 臂部设计的基本要求
+
+      - ①手臂应具备足够的承载能力和刚度
+      - ②手臂质量和转动惯量要小
+      - ③手臂运动要平稳，定位精度要高
+      - ④手臂导向性要好
+</code></pre></li>
+<li><p>立柱</p>
+<ul>
+<li>立柱是支撑手臂的部件，立柱也可以是手臂的一部分，手臂的回转运动和升降运动均与立柱有密切的联系。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>    - 机座
+
+        - 机座是机械手的基础部分，起到固定支持和作用，机械臂驱动系统通常安装于机座上。
+        - 机座的设计方式
+            - 移动式
+            - 非移动式
+</code></pre><ul>
+<li><p>系统分析</p>
+<ul>
+<li>①根据机械臂的使用场合，明确机械臂的目的和任务。</li>
+<li>②分析机械臂所在系统的工作环境，包括机械臂与已有设备的兼容性。</li>
+<li>认真分析系统的工作要求，确定机械臂的基本功能和方案。</li>
+</ul>
+</li>
+<li><p>技术设计</p>
+<ul>
+<li>1.机械臂基本参数的确定</li>
+<li>2.机械臂运动形式的选择</li>
+<li>3.拟定检测传感系统框图</li>
+<li>4.确定控制系统总方案，绘制框图</li>
+<li>5.机械结构设计</li>
+</ul>
+</li>
+</ul>
+<h2 id="机器人行走机构"><a href="#机器人行走机构" class="headerlink" title="机器人行走机构"></a>机器人行走机构</h2><h3 id="轮式行走机构"><a href="#轮式行走机构" class="headerlink" title="轮式行走机构"></a>轮式行走机构</h3><ul>
+<li><p>两轮轮系</p>
+<ul>
+<li>1.当两驱动轮具有相同的速度时，机器人进行直线运动</li>
+<li>2.当一个驱动轮的速度为零，另一个驱动轮速度不为零时，机器人绕前一驱动轮与地面的接触点作旋转运动</li>
+<li>3.当两驱动轮速度出现其他情况时，机器人的运动将会是这两种分运动的合运动</li>
+</ul>
+</li>
+<li><p>三轮轮系</p>
+</li>
+<li>四轮轮系</li>
+<li><p>轮式行走机构特点</p>
+<ul>
+<li>运动速度快</li>
+<li>能量消耗少</li>
+<li>机械结构简单</li>
+<li>运动控制容易</li>
+<li>但其环境适应性差，常用于平坦无阻的地面环境</li>
+</ul>
+</li>
+</ul>
+<h3 id="履带式移动机构"><a href="#履带式移动机构" class="headerlink" title="履带式移动机构"></a>履带式移动机构</h3><ul>
+<li><p>履带式行走机构的特征是将圆环状的履带卷绕在多个车轮上，使车轮不直接同地面接触，而是利用履带缓和地面的凹凸不平。</p>
+<ul>
+<li><p>同步带</p>
+<ul>
+<li>优点：效率高，设计简单。</li>
+<li>缺点：同步带应用灵活性差</li>
+</ul>
+</li>
+<li><p>活节带</p>
+<ul>
+<li>优点：活节履带可以任意增减履块，因此更灵活。</li>
+<li>缺点：①各履块之间靠连杆连接，若连杆处受力不均则容易发生损坏。②活节履块运行噪音较大</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>履带式行走机构的特点</p>
+<ul>
+<li>履带式行走机构稳定性好、越野能力和地面适应能力强。</li>
+<li>但其机械结构复杂，质量大；不仅能耗大，而且运动速度慢，噪声大。</li>
+</ul>
+</li>
+</ul>
+<h3 id="足式移动机构"><a href="#足式移动机构" class="headerlink" title="足式移动机构"></a>足式移动机构</h3><ul>
+<li><p>足式机构的优势</p>
+<ul>
+<li>适应力强</li>
+<li>具有主动隔振能力</li>
+<li>自恢复平稳性</li>
+<li>能耗低</li>
+</ul>
+</li>
+<li><p>两足结构</p>
+<ul>
+<li>两足步行机器人具有良好的环境适应性，其运动结构也最接近人类，故也被称为“类人双足行走机器人”。</li>
+</ul>
+</li>
+<li><p>四足结构</p>
+</li>
+<li><p>六足结构</p>
+<ul>
+<li><ul>
+<li><p>周期步态</p>
+<ul>
+<li><p>二步态</p>
+<ul>
+<li>二步态将机器人的六足分为两组，每组有三条足且均为摆动相或支撑相</li>
+<li>机器人运动过程中一组为摆动相，则另一组为支撑相，两组在摆动相和支撑相间循环切换</li>
+<li>摆腿的顺序为153-426-153</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>  - 三步态
+
+    - 摆腿的顺序为15-26-34-15
+
+  - 六步态
+
+    - 摆腿的顺序为4-2-6-1-5-3-4-2-6
+
+      - 
+</code></pre><h3 id="轮式、履带式、足式行走机构的比较"><a href="#轮式、履带式、足式行走机构的比较" class="headerlink" title="轮式、履带式、足式行走机构的比较"></a>轮式、履带式、足式行走机构的比较</h3><ul>
+<li>1、轮式机器人更适合平坦的路面，并且能高速移动。但容易打滑，不平稳，对复杂地形无能为力。</li>
+<li>2、履带式机器人能更好的适应松软的地形。履带与地面接触面积大，运动更加平稳。缺点是无法应对高低落差较大的地形。</li>
+<li>3、足式机器人几乎可以适应各种复杂地形，能够跨越障碍，缺点是行进速度较低，运动控制更加复杂。</li>
+</ul>
+<h2 id="机器人驱动机构"><a href="#机器人驱动机构" class="headerlink" title="机器人驱动机构"></a>机器人驱动机构</h2><h3 id="驱动电机"><a href="#驱动电机" class="headerlink" title="驱动电机"></a>驱动电机</h3><ul>
+<li><p>特点及要求</p>
+<ul>
+<li>1 可控性高</li>
+<li>2 精度高</li>
+<li>3 可靠性高</li>
+<li>4 响应迅速</li>
+<li>5 环境适应性强</li>
+</ul>
+</li>
+<li><p>分类</p>
+<ul>
+<li><p>伺服电机</p>
+<ul>
+<li>直流伺服电机</li>
+<li>交流伺服电机</li>
+<li><p>转速和转向取决于电压和相位</p>
+<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>直流电动机</p>
+<ul>
+<li>有刷直流电机</li>
+<li>无刷直流电机</li>
+</ul>
+</li>
+<li><p>步进电机</p>
+<ul>
+<li>步进电机是一种将电脉冲信号转化为角位移的执行机构</li>
+<li>每输入一个脉冲，步进电机就按设定的方向转动一个固定的角度。</li>
+<li></li>
+<li><p>步进电机特点</p>
+<ul>
+<li>步进电机具有惯量低、定位精度高、无累积误差、控制简单等特点</li>
+<li>广泛应用于机电一体化产品，如数控机床、机械臂、计算机外部设备等。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="驱动控制"><a href="#驱动控制" class="headerlink" title="驱动控制"></a>驱动控制</h3><ul>
+<li><p>驱动控制任务</p>
+<ul>
+<li>姿态稳定控制</li>
+<li>路径跟踪控制</li>
+<li>轨迹跟踪控制</li>
+</ul>
+</li>
+<li><p>底层控制任务</p>
+<ul>
+<li><p>速度控制</p>
+<ul>
+<li></li>
+</ul>
+</li>
+<li><p>位置控制</p>
+<ul>
+<li></li>
+</ul>
+</li>
+<li><p>航向角控制</p>
+</li>
+</ul>
+</li>
+<li><p>控制策略</p>
+<ul>
+<li><p>PID控制</p>
+<ul>
+<li></li>
+<li><p>特点</p>
+<ul>
+<li>PID控制算法结构简单、易于实现，并具有较强的鲁棒性</li>
+<li>当被控对象的结构和参数不能完全掌握，或得不到精确的数学模型时，应用PID控制技术最为方便</li>
+<li>PID控制算法参数的整定就是PID算法中的kp、ki、kd参数，使相应的计算机控制系统输出的动态响应满足某种性能要求</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>变结构控制</p>
+</li>
+<li>自适应控制</li>
+<li>模糊控制</li>
+<li>神经网络控制</li>
+</ul>
+</li>
+</ul>
+<h3 id="驱动电源"><a href="#驱动电源" class="headerlink" title="驱动电源"></a>驱动电源</h3><h2 id="多机器人系统"><a href="#多机器人系统" class="headerlink" title="多机器人系统"></a>多机器人系统</h2><h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
+<li>更广泛的任务领域</li>
+<li>更高的容错性</li>
+<li>更强的鲁棒性</li>
+<li>较好的内在的并行性</li>
+<li>系统效率更高</li>
+<li>经济成本更低</li>
+<li>系统更加稳定可靠</li>
+</ul>
+<h3 id="研究方向"><a href="#研究方向" class="headerlink" title="研究方向"></a>研究方向</h3><ul>
+<li><p>体系结构</p>
+<ul>
+<li><p>决定了多机器人系统在任务分配、规划、决策和执行过程中的运行机制，以及系统各机器人成员所担当的角色</p>
+<ul>
+<li>集中式</li>
+<li>分布式</li>
+<li>混合式</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>感知</p>
+</li>
+<li><p>通信</p>
+<ul>
+<li>显式通信</li>
+<li>隐式通信</li>
+<li>混合式通信</li>
+</ul>
+</li>
+<li><p>协同规划</p>
+</li>
+</ul>
+<h3 id="典型的多机器人系统"><a href="#典型的多机器人系统" class="headerlink" title="典型的多机器人系统"></a>典型的多机器人系统</h3><ul>
+<li><p>群智能机器人系统</p>
+<ul>
+<li>由许多无差别的自治机器人组成的分布式系统，它主要研究如何使能力有限的个体机器人通过交互产生群体智能</li>
+</ul>
+</li>
+<li><p>可重构机器人系统</p>
+<ul>
+<li>以一些具有不同功能的标准模块为组件，根据任务的需要，对这些模块进行组合，进而形成具有不同功能的系统。</li>
+</ul>
+</li>
+<li><p>协作机器人系统</p>
+<ul>
+<li>由多个具有一定智能的自治机器人组成，机器人之间通过通信实现相互间的协作，来完成复杂的任务</li>
+</ul>
+</li>
+</ul>
+<h3 id="人机协作的关键技术"><a href="#人机协作的关键技术" class="headerlink" title="人机协作的关键技术"></a>人机协作的关键技术</h3><ul>
+<li><ol>
+<li>机构设计</li>
+</ol>
+</li>
+<li><ol>
+<li>多维感知</li>
+</ol>
+</li>
+<li><ol>
+<li>场所监视</li>
+</ol>
+</li>
+<li><ol>
+<li>规划测试</li>
+</ol>
+</li>
+<li><ol>
+<li>人机交互</li>
+</ol>
+</li>
+</ul>
+<h2 id="机器人智能"><a href="#机器人智能" class="headerlink" title="机器人智能"></a>机器人智能</h2><h3 id="基于行为的控制方法"><a href="#基于行为的控制方法" class="headerlink" title="基于行为的控制方法"></a>基于行为的控制方法</h3><ul>
+<li><ul>
+<li>控制单元将感知信息转换为执行器的指令</li>
+<li>触发单元则用来决定控制单元何时动作</li>
+<li>当传感器触发某种行为时，会立即作出相对应的动作</li>
+</ul>
+</li>
+<li><p>机器人的运动</p>
+<ul>
+<li>感知单元</li>
+<li><p>智能单元</p>
+<ul>
+<li>基于行为组</li>
+<li>仲裁器</li>
+</ul>
+</li>
+<li><p>执行单元</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="基于机器人行为的实例"><a href="#基于机器人行为的实例" class="headerlink" title="基于机器人行为的实例"></a>基于机器人行为的实例</h3><ul>
+<li><ul>
+<li><p>任务分析</p>
+<ul>
+<li>1、识别目标物——区分墙体和箱子——箱子可以移动，墙体不能移动</li>
+<li>2、运动避障——避开墙体——在碰到墙体的时候调整方向</li>
+<li>3、推箱子——推箱子至A区域——依靠光线强弱推箱子</li>
+</ul>
+</li>
+<li><p>任务行为分解</p>
+<ul>
+<li><p>避障行为</p>
+<ul>
+<li>在收集箱子中，机器人将向检测到的特定物体推动，这可以帮助机器人判别障碍物是不是箱子。如果机器人不能推动所检测到的物体，则认为它是障碍物。逃离行为将被触发。</li>
+</ul>
+</li>
+<li><p>逃离行为</p>
+<ul>
+<li>当机器人无力推动的物体或发生碰撞时，逃离行为可以通过控制机器人后退和旋转，为其选择一个新的运动方向行进。</li>
+</ul>
+</li>
+<li><p>暗中拒推行为</p>
+<ul>
+<li>可以有效的避免机器人将箱子推离光源位置。当机器人认为光线很暗时，机器人会停止运动，触发反向飞蛾行为</li>
+</ul>
+</li>
+<li><p>反向飞蛾行为</p>
+<ul>
+<li>当机器人认为光线很暗，可以控制机器人转向行驶，从而将箱子推至目标区域内。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>传统的控制方法</p>
+<ul>
+<li><p>“感知-建模-规划-执行”的控制策略</p>
+<ul>
+<li>扫描房间中环境信息，建立环境模型</li>
+<li>定位箱子的位置</li>
+<li>规划机器人运动的路径</li>
+<li>依次将箱子推至A区域中</li>
+</ul>
+</li>
+<li><p>自顶向下</p>
+<ul>
+<li><p>优点</p>
+<ul>
+<li>结构层次清晰，容易实现的模块功能，能具有高层次智能的行为。</li>
+</ul>
+</li>
+<li><p>缺点</p>
+<ul>
+<li>系统实时性比较差，控制时间延长。当某一环节出现问题时，整个控制系统环链难以顺利执行。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>基于行为的控制方法</p>
+<ul>
+<li>通过搜索一系列可编程的“条件—动作”语句，实现对机器人的控制</li>
+<li><p>自下而上</p>
+<ul>
+<li><p>优点</p>
+<ul>
+<li>机器人反应快速，传感器与执行器之间是一种直接映射的关系</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="模糊控制"><a href="#模糊控制" class="headerlink" title="模糊控制"></a>模糊控制</h3><ul>
+<li>定义：用模糊数学的知识模仿人脑的思维方式，对模糊现象进行识别和判决，并给出控制量，对被控对象进行控制。</li>
+<li>基本步骤：首先根据操作人员手动控制的经验，总结出一套完整的控制规则，再根据系统当前的运行状态，经过模糊推理、模糊判决等运算，求出控制量，实现对被控对象的控制。</li>
+<li>主要特点：不需要建立对象的数学模型</li>
+</ul>
+<h3 id="模糊控制系统"><a href="#模糊控制系统" class="headerlink" title="模糊控制系统"></a>模糊控制系统</h3><ul>
+<li></li>
+<li><p>模糊化具体过程</p>
+<ul>
+<li></li>
+</ul>
+</li>
+<li><p>知识库</p>
+<ul>
+<li><p>数据库</p>
+<ul>
+<li>隶属函数</li>
+<li>尺度变换因子</li>
+<li>模糊空间分级数</li>
+</ul>
+</li>
+<li><p>模糊控制规则库</p>
+<ul>
+<li>模糊规则</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>模糊推理</p>
+<ul>
+<li>模糊推理是模糊控制器的核心</li>
+<li>模糊推理：运用模糊逻辑中所蕴含关系和推理规则来进行模糊概念的推理</li>
+</ul>
+</li>
+<li><p>清晰化</p>
+<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+<h3 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h3><ul>
+<li><p>生物神经网络</p>
+<ul>
+<li>树突：接受信息</li>
+<li>轴突：发送信息</li>
+<li>当神经元所获得的输入信号，累计超过某个域值时，它就会处于兴奋状态，产生电脉冲，由上层神经元的轴突将电脉冲信号传递给下一层的神经元细胞树突</li>
+<li>层层的神经元细胞相互连接，便构成了错综复杂的神经网络</li>
+</ul>
+</li>
+<li><p>人工神经网络</p>
+<ul>
+<li><p>特点</p>
+<ul>
+<li>1、具有自主学习能力</li>
+<li>2、具有联想存储功能</li>
+<li>3、具有高速寻找优化解的能力</li>
+<li>4、具有容错能力</li>
+</ul>
+</li>
+<li><p>工作原理</p>
+<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h3><ul>
+<li><p>步骤</p>
+<ul>
+<li></li>
+</ul>
+</li>
+<li><p>分类</p>
+<ul>
+<li>1、监督式学习</li>
+<li>2、非监督式学习</li>
+<li>3、半监督式学习</li>
+<li>4、强化学习</li>
+</ul>
+</li>
+</ul>
+<h2 id="机器人通信系统"><a href="#机器人通信系统" class="headerlink" title="机器人通信系统"></a>机器人通信系统</h2><h3 id="通信"><a href="#通信" class="headerlink" title="通信"></a>通信</h3><ul>
+<li><p>通信是利用电子信息技术建立一个信道，通过信道将信息源的信息传输到目的点</p>
+<ul>
+<li></li>
+</ul>
+</li>
+<li><p>通信系统的基本模型</p>
+<ul>
+<li><ul>
+<li>信源：把待传输的信息转换成原始电信号</li>
+<li>发送设备（转换器）：将信源发出的信息变换成适合在信道中传输的信号，使原始信号适应信道传输要求</li>
+<li><p>信道：传递信息的通道或传递信号的设施。</p>
+<ul>
+<li>有线信道</li>
+<li>无线信道</li>
+</ul>
+</li>
+<li><p>接收设备：把从信道上接收的信号变换成信息受信者可以接收的信息，起着还原信号的作用。</p>
+</li>
+<li>信宿（受信者）：信息接收者，可将复原的原始信号转换成相应的消息</li>
+<li>噪声源：系统内各种干扰因素的等效集合</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>现代通信系统的功能模块</p>
+<ul>
+<li><p>接入功能模块</p>
+<ul>
+<li>将语言、图像或数据进行数字化后并变换为适合于网络传输的信号</li>
+</ul>
+</li>
+<li><p>传输功能模块</p>
+<ul>
+<li>将接入的信号进行信道编码和调制，变为适合于传输的信号形式</li>
+</ul>
+</li>
+<li><p>控制功能模块</p>
+<ul>
+<li>由信令网、交换设备和路由器等部件组成。它的作用是运营计费和数据保密</li>
+</ul>
+</li>
+<li><p>应用功能模块</p>
+<ul>
+<li>为运营商提供视频、语音、娱乐等业务支持</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>机器人的通信系统</p>
+<ul>
+<li>机器人的通信系统是智能机器个体以及群体机器人协调工作中的一个重要组成部分</li>
+<li><p>机器人的通信可以从通信对象角度分为内部通信和外部通信</p>
+<ul>
+<li><p>内部通信</p>
+<ul>
+<li>协调各功能模块间的协作</li>
+</ul>
+</li>
+<li><p>外部通信</p>
+<ul>
+<li>协调机器人与控制者或者机器人之间的信息交互</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>机器人通信系统的要求</p>
+<ul>
+<li>稳定性好，通信质量高，延迟低</li>
+<li>能耗低</li>
+<li>体积小，易安装，易维修</li>
+</ul>
+</li>
+<li><p>通信方式</p>
+<ul>
+<li><p>显式通信</p>
+<ul>
+<li><p>多机器人系统利用特定的通信介质，通过某种共有的规则和方式实现信息的传递</p>
+<ul>
+<li><p>直接通信</p>
+<ul>
+<li><p>要求发送者和接收者保持一致，即通信时发送者和接收者同时在线。因此，直接通信需要一种通讯协议</p>
+<ul>
+<li>如点对点通信</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>间接通信</p>
+<ul>
+<li><p>间接通信不需要发送者与接收者保持一致</p>
+<ul>
+<li>如广播、监听</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>隐式通信</p>
+<ul>
+<li><p>多机器人系统通过外界环境和自身传感器来获取所需的信息，并实现机器人之间的相互协作</p>
+<ul>
+<li><p>感知通信</p>
+<ul>
+<li><p>机器人利用自身传感器，通过感知环境的变化，并依据自身内部的推理和模型理解，进行相应的决策和协作</p>
+<ul>
+<li>如灯塔通信</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>环境通信</p>
+<ul>
+<li><p>机器人在通过传感器获取外界环境信息的同时也可能获取到其它机器人遗留在环境中的某些特定信息，从而进行信息传递</p>
+<ul>
+<li>如信息素通信</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>通信模型</p>
+<ul>
+<li><p>C/S 通信模型</p>
+<ul>
+<li>集中式结构</li>
+<li><p>特点</p>
+<ul>
+<li>系统具有中心服务器，所有客户进程与服务器进程进行双向通信，客户进程间无直接通路。</li>
+<li>C/S 通信适用于需要集中控制的场合，其结构简单，易于实现，便于错误诊断及系统维护。</li>
+</ul>
+</li>
+</ul>
+<p>-</p>
+</li>
+<li><p>P2P 通信模型</p>
+<ul>
+<li>分布式结构</li>
+<li><p>特点</p>
+<ul>
+<li>节点间通信不经过中心服务器的转发，而是直接进行通信。</li>
+<li>系统运行不依赖于模型中某个节点，因此系统负载较为均衡，可靠性高</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="传感器专题"><a href="#传感器专题" class="headerlink" title="传感器专题"></a>传感器专题</h2><p>1、什么是传感器<br>把非电量转换为电量的器件</p>
+<p>2、传感器静态指标<br>线性度、灵敏度、重复性、分率力、精度等</p>
+<p>3、电位器的分类<br>直线型电位器、旋转型电位器</p>
+<p>3、常见测距的传感器<br>超声波传感器、红外线传感器</p>
+<p>4、拾音器的构成和语音的基本参数<br>麦克风、放大器<br>语音的基本参数：声强、响度、音高、基因周期等。</p>
+<p>5、压力测量的传感器<br>压电式传感器、应变片式传感器、电容式传感器</p>
+<p>6、什么是电阻式传感器<br>电阻应变片的工作原理是基于应变效应<br>即导体或半导体材料在外界力的作用下产生机械变形时，其电阻值相应发生变化， 这种现象称为“应变效应”。<br>电阻式传感器通过测量电阻值的变化来感知物理量的变化，如温度、压力等。常见的电阻式传感器包括热敏电阻和应变片。</p>
+<p>7、什么是霍尔效应<br>在导体或半导体中，当电流垂直于磁场方向流动时，会在垂直于电流和磁场的方向上产生电压差。这种效应被用于霍尔传感器中</p>
+<p>8、电五官对应人体的那些感官</p>
+<ul>
+<li><strong>光敏传感器</strong>：视觉</li>
+<li><strong>声敏传感器</strong>：听觉</li>
+<li><strong>气敏传感器</strong>：嗅觉</li>
+<li><strong>化学传感器</strong>：味觉</li>
+<li><strong>触觉传感器</strong>：触觉</li>
+</ul>
+<p>9、陀螺仪传感器直接测量的物理量<br>角速度</p>
+<p>10、激光扫描测距的方法<br>激光扫描测距通过发射激光束，当激光束遇到物体后被反射回传感器，传感器通过测量激光的飞行时间或相位差来计算物体到传感器的距离<br>方法：三角法、相位法</p>
+<p>11、红外测距的原理<br>根据反射光的强弱判断物体的距离，距离近则反射光强，距离远则反射光弱。</p>
+<p>12、超声波测距原理<br>通过测量超声波经反射到达接收传感器的时间和发射时间之差来实现机器人与障碍物之间的测距。</p>
+<p>13、多传感器数据融合的目的和原理<br>目的：利用多个传感器共同联合的操作优势，提高传感器系统的有效性。<br>基本原理：充分利用多传感器资源，将多个传感器在空间和时间上的冗余、互补信息依据某种算法进行融合，获得对被测对象一致性解释或描述。再由辅助系统进行环境判定、从而形成更高层次的综合决策。</p>
+<h2 id="智能机器人笔试"><a href="#智能机器人笔试" class="headerlink" title="智能机器人笔试"></a>智能机器人笔试</h2><h3 id="选择20分"><a href="#选择20分" class="headerlink" title="选择20分"></a>选择20分</h3><h3 id="判断10分"><a href="#判断10分" class="headerlink" title="判断10分"></a>判断10分</h3><h3 id="简答题40分"><a href="#简答题40分" class="headerlink" title="简答题40分"></a>简答题40分</h3><h3 id="创新题30分"><a href="#创新题30分" class="headerlink" title="创新题30分"></a>创新题30分</h3></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://WhynotV.github.io">咕咕</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://whynotv.github.io/posts/9962.html">https://whynotv.github.io/posts/9962.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://WhynotV.github.io" target="_blank">Whynot'Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%A4%8D%E4%B9%A0/">复习</a></div><div class="post_share"><div class="social-share" data-image="/img/bizhi.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.JPG" target="_blank"><img class="post-qr-code-img" src="/img/wechat.JPG" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.JPG" target="_blank"><img class="post-qr-code-img" src="/img/alipay.JPG" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/d388.html" title="数据结构模拟题"><img class="cover" src="/img/bizhi.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">数据结构模拟题</div></div></a></div><div class="next-post pull-right"><a href="/posts/c03c.html" title="技术测试"><img class="cover" src="/img/bizhi.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">技术测试</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/pingu.JPG" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">咕咕</div><div class="author-info__description">依旧在追自己的鹅</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/WhynotV"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">心怀信念，更美好的事情正纷至沓来。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">机器人系统基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%BA%E6%A2%B0%E8%87%82%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.</span> <span class="toc-text">机械臂结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%BA%E6%A2%B0%E8%87%82%E5%88%86%E7%B1%BB%E4%B8%8E%E4%BD%9C%E7%94%A8"><span class="toc-number">1.1.1.</span> <span class="toc-text">机械臂分类与作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%BA%E6%A2%B0%E8%87%82%E6%9C%BA%E6%9E%84%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.1.2.</span> <span class="toc-text">机械臂机构设计</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%A1%8C%E8%B5%B0%E6%9C%BA%E6%9E%84"><span class="toc-number">1.2.</span> <span class="toc-text">机器人行走机构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AE%E5%BC%8F%E8%A1%8C%E8%B5%B0%E6%9C%BA%E6%9E%84"><span class="toc-number">1.2.1.</span> <span class="toc-text">轮式行走机构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%A5%E5%B8%A6%E5%BC%8F%E7%A7%BB%E5%8A%A8%E6%9C%BA%E6%9E%84"><span class="toc-number">1.2.2.</span> <span class="toc-text">履带式移动机构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B6%B3%E5%BC%8F%E7%A7%BB%E5%8A%A8%E6%9C%BA%E6%9E%84"><span class="toc-number">1.2.3.</span> <span class="toc-text">足式移动机构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AE%E5%BC%8F%E3%80%81%E5%B1%A5%E5%B8%A6%E5%BC%8F%E3%80%81%E8%B6%B3%E5%BC%8F%E8%A1%8C%E8%B5%B0%E6%9C%BA%E6%9E%84%E7%9A%84%E6%AF%94%E8%BE%83"><span class="toc-number">1.2.4.</span> <span class="toc-text">轮式、履带式、足式行走机构的比较</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%BA%E5%99%A8%E4%BA%BA%E9%A9%B1%E5%8A%A8%E6%9C%BA%E6%9E%84"><span class="toc-number">1.3.</span> <span class="toc-text">机器人驱动机构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A9%B1%E5%8A%A8%E7%94%B5%E6%9C%BA"><span class="toc-number">1.3.1.</span> <span class="toc-text">驱动电机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A9%B1%E5%8A%A8%E6%8E%A7%E5%88%B6"><span class="toc-number">1.3.2.</span> <span class="toc-text">驱动控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A9%B1%E5%8A%A8%E7%94%B5%E6%BA%90"><span class="toc-number">1.3.3.</span> <span class="toc-text">驱动电源</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.4.</span> <span class="toc-text">多机器人系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E7%82%B9"><span class="toc-number">1.4.1.</span> <span class="toc-text">特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91"><span class="toc-number">1.4.2.</span> <span class="toc-text">研究方向</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B8%E5%9E%8B%E7%9A%84%E5%A4%9A%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.4.3.</span> <span class="toc-text">典型的多机器人系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%BA%E6%9C%BA%E5%8D%8F%E4%BD%9C%E7%9A%84%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF"><span class="toc-number">1.4.4.</span> <span class="toc-text">人机协作的关键技术</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%99%BA%E8%83%BD"><span class="toc-number">1.5.</span> <span class="toc-text">机器人智能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E8%A1%8C%E4%B8%BA%E7%9A%84%E6%8E%A7%E5%88%B6%E6%96%B9%E6%B3%95"><span class="toc-number">1.5.1.</span> <span class="toc-text">基于行为的控制方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%A1%8C%E4%B8%BA%E7%9A%84%E5%AE%9E%E4%BE%8B"><span class="toc-number">1.5.2.</span> <span class="toc-text">基于机器人行为的实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E7%B3%8A%E6%8E%A7%E5%88%B6"><span class="toc-number">1.5.3.</span> <span class="toc-text">模糊控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E7%B3%8A%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.5.4.</span> <span class="toc-text">模糊控制系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="toc-number">1.5.5.</span> <span class="toc-text">神经网络</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0"><span class="toc-number">1.5.6.</span> <span class="toc-text">机器学习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%BA%E5%99%A8%E4%BA%BA%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.6.</span> <span class="toc-text">机器人通信系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E4%BF%A1"><span class="toc-number">1.6.1.</span> <span class="toc-text">通信</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%A0%E6%84%9F%E5%99%A8%E4%B8%93%E9%A2%98"><span class="toc-number">1.7.</span> <span class="toc-text">传感器专题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%99%BA%E8%83%BD%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%AC%94%E8%AF%95"><span class="toc-number">1.8.</span> <span class="toc-text">智能机器人笔试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A920%E5%88%86"><span class="toc-number">1.8.1.</span> <span class="toc-text">选择20分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A4%E6%96%AD10%E5%88%86"><span class="toc-number">1.8.2.</span> <span class="toc-text">判断10分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E7%AD%94%E9%A2%9840%E5%88%86"><span class="toc-number">1.8.3.</span> <span class="toc-text">简答题40分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E6%96%B0%E9%A2%9830%E5%88%86"><span class="toc-number">1.8.4.</span> <span class="toc-text">创新题30分</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/ee05.html" title="哈希链表"><img src="/img/bizhi.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="哈希链表"/></a><div class="content"><a class="title" href="/posts/ee05.html" title="哈希链表">哈希链表</a><time datetime="2025-03-04T08:09:47.000Z" title="发表于 2025-03-04 16:09:47">2025-03-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/ccb8.html" title="毕设-智慧图书管理系统"><img src="/img/bizhi.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="毕设-智慧图书管理系统"/></a><div class="content"><a class="title" href="/posts/ccb8.html" title="毕设-智慧图书管理系统">毕设-智慧图书管理系统</a><time datetime="2025-02-23T07:02:03.000Z" title="发表于 2025-02-23 15:02:03">2025-02-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/d435.html" title="技巧提升"><img src="/img/bizhi.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="技巧提升"/></a><div class="content"><a class="title" href="/posts/d435.html" title="技巧提升">技巧提升</a><time datetime="2024-09-18T03:43:55.000Z" title="发表于 2024-09-18 11:43:55">2024-09-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/28df.html" title="近期感悟"><img src="/img/bizhi.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="近期感悟"/></a><div class="content"><a class="title" href="/posts/28df.html" title="近期感悟">近期感悟</a><time datetime="2024-09-14T07:25:33.000Z" title="发表于 2024-09-14 15:25:33">2024-09-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/1854.html" title="咕咕の用户中心"><img src="https://raw.githubusercontent.com/WhynotV/tuchuang/main/img/sky-8775846_1280.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="咕咕の用户中心"/></a><div class="content"><a class="title" href="/posts/1854.html" title="咕咕の用户中心">咕咕の用户中心</a><time datetime="2024-08-24T12:35:18.000Z" title="发表于 2024-08-24 20:35:18">2024-08-24</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By 咕咕</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><div class="aplayer no-destroy" data-id="10165643249" data-server="netease" data-type="playlist"   data-order="list" data-fixed="true" data-preload="auto" data-autoplay="false" data-mutex="true" ></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v5.4.0" title=""><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px" data-title="主题版本Butterfly_v4.2.2" title=""><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" alt=""/></a><a class="github-badge" target="_blank" href="https://www.jsdelivr.com/" style="margin-inline:5px" data-title="本站使用JsDelivr为静态资源提供CDN加速" title=""><img src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&amp;logo=jsDelivr" alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站项目由Github托管" title=""><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" alt=""/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title=""><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" alt=""/></a></p>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="/js/runtime/runtime.min.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '1.5s');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '30');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('flink-list-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__flipInY');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('flink-list-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__animated');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('article-sort-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__slideInRight');
+    arr[i].setAttribute('data-wow-duration', '1.5s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('site-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__flipInY');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('site-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__animated');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/wow_init.js"></script><script async src="/js/ali_font.js"></script><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    if(parent_div_git) {
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var qweather_key = 'f752b837d0fb4629b883abfe289c10f9';
+  var gaud_map_key = '0f289e044218137dce84f4fb7215d56c';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '112.982279,28.19409';
+  var clock_default_rectangle_enable = 'false';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script><script data-pjax src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.js"></script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body></html>

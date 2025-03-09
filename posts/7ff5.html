@@ -1,0 +1,457 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>计算机网络核心概念 | Whynot'Blog</title><meta name="author" content="咕咕"><meta name="copyright" content="咕咕"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="浅显易懂的计算机网络核心概念解析1. 计算机网络是什么？计算机网络就像一张“信息高速公路网”，把分散在不同地方的电脑、手机、服务器等设备连在一起，让它们能互相通信、共享资源（比如文件、打印机、网络服务）。简单来说，就是通过网线、Wi-Fi或光纤等介质，让设备能“对话”的系统  2. 核心组成部分 硬件：电脑、路由器、交换机、网线、光纤等物理设备。 软件：浏览器、微信、网络操作系统等应用软件。 协议">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络核心概念">
+<meta property="og:url" content="https://whynotv.github.io/posts/7ff5.html">
+<meta property="og:site_name" content="Whynot&#39;Blog">
+<meta property="og:description" content="浅显易懂的计算机网络核心概念解析1. 计算机网络是什么？计算机网络就像一张“信息高速公路网”，把分散在不同地方的电脑、手机、服务器等设备连在一起，让它们能互相通信、共享资源（比如文件、打印机、网络服务）。简单来说，就是通过网线、Wi-Fi或光纤等介质，让设备能“对话”的系统  2. 核心组成部分 硬件：电脑、路由器、交换机、网线、光纤等物理设备。 软件：浏览器、微信、网络操作系统等应用软件。 协议">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://whynotv.github.io/img/bizhi.jpg">
+<meta property="article:published_time" content="2025-03-09T06:56:43.000Z">
+<meta property="article:modified_time" content="2025-03-09T06:57:00.569Z">
+<meta property="article:author" content="咕咕">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://whynotv.github.io/img/bizhi.jpg"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://whynotv.github.io/posts/7ff5.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '计算机网络核心概念',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-03-09 14:57:00'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/equipment.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.css" /><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-blog@2.0.4/css/runtime/runtime.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.2.0"><link rel="alternate" href="/atom.xml" title="Whynot'Blog" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (true) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/pingu.JPG" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 类别</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%8A%80%E6%9C%AF/"><i class="fa-fw fas fa-laptop"></i><span> 技术</span></a></li><li><a class="site-page child" href="/categories/%E7%94%9F%E6%B4%BB/"><i class="fa-fw fas fa-coffee"></i><span> 生活</span></a></li><li><a class="site-page child" href="/categories/%E9%A1%B9%E7%9B%AE/"><i class="fa-fw fas fa-project-diagram"></i><span> 项目</span></a></li><li><a class="site-page child" href="/categories/%E5%A4%8D%E4%B9%A0/"><i class="fa-fw fas fa-book"></i><span> 复习</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> Gallery</span></a></li><li><a class="site-page child" href="/bangumis/"><i class="fa-fw fas fa-video"></i><span> 追番</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-heart"></i><span> About</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></li><li><a class="site-page child" href="/equipment/"><i class="fa-fw fas fa-laptop"></i><span> 我的装备</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/bizhi.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Whynot'Blog"><span class="site-name">Whynot'Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 类别</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%8A%80%E6%9C%AF/"><i class="fa-fw fas fa-laptop"></i><span> 技术</span></a></li><li><a class="site-page child" href="/categories/%E7%94%9F%E6%B4%BB/"><i class="fa-fw fas fa-coffee"></i><span> 生活</span></a></li><li><a class="site-page child" href="/categories/%E9%A1%B9%E7%9B%AE/"><i class="fa-fw fas fa-project-diagram"></i><span> 项目</span></a></li><li><a class="site-page child" href="/categories/%E5%A4%8D%E4%B9%A0/"><i class="fa-fw fas fa-book"></i><span> 复习</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> Gallery</span></a></li><li><a class="site-page child" href="/bangumis/"><i class="fa-fw fas fa-video"></i><span> 追番</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-heart"></i><span> About</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></li><li><a class="site-page child" href="/equipment/"><i class="fa-fw fas fa-laptop"></i><span> 我的装备</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">计算机网络核心概念</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-03-09T06:56:43.000Z" title="发表于 2025-03-09 14:56:43">2025-03-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-03-09T06:57:00.569Z" title="更新于 2025-03-09 14:57:00">2025-03-09</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="浅显易懂的计算机网络核心概念解析"><a href="#浅显易懂的计算机网络核心概念解析" class="headerlink" title="浅显易懂的计算机网络核心概念解析"></a>浅显易懂的计算机网络核心概念解析</h3><h4 id="1-计算机网络是什么？"><a href="#1-计算机网络是什么？" class="headerlink" title="1. 计算机网络是什么？"></a><strong>1. 计算机网络是什么？</strong></h4><p>计算机网络就像一张“信息高速公路网”，把分散在不同地方的电脑、手机、服务器等设备连在一起，让它们能互相通信、共享资源（比如文件、打印机、网络服务）。简单来说，就是通过网线、Wi-Fi或光纤等介质，让设备能“对话”的系统 </p>
+<h4 id="2-核心组成部分"><a href="#2-核心组成部分" class="headerlink" title="2. 核心组成部分"></a><strong>2. 核心组成部分</strong></h4><ul>
+<li><strong>硬件</strong>：电脑、路由器、交换机、网线、光纤等物理设备。</li>
+<li><strong>软件</strong>：浏览器、微信、网络操作系统等应用软件。</li>
+<li>协议：设备之间通信的“语言规则”，比如TCP/IP、HTTP、Wi-Fi协议等</li>
+</ul>
+<h4 id="3-网络分层结构（OSI模型-vs-TCP-IP模型）"><a href="#3-网络分层结构（OSI模型-vs-TCP-IP模型）" class="headerlink" title="3. 网络分层结构（OSI模型 vs TCP/IP模型）"></a><strong>3. 网络分层结构（OSI模型 vs TCP/IP模型）</strong></h4><p><strong>OSI七层模型</strong>（理论框架）：</p>
+<ol>
+<li><strong>物理层</strong>：传输电信号或光信号（如网线、Wi-Fi信号）。</li>
+<li><strong>数据链路层</strong>：通过MAC地址（如<code>00:1A:2B:3C:4D:5E</code>）在局域网内传输数据帧。</li>
+<li><strong>网络层</strong>：用IP地址（如<code>192.168.1.1</code>）跨网络寻址和路由（路由器工作在此层）。</li>
+<li><strong>传输层</strong>：确保数据可靠传输（TCP协议）或快速传输（UDP协议）。</li>
+<li><strong>会话层</strong>：管理通信会话（如微信聊天连接的建立和断开）。</li>
+<li><strong>表示层</strong>：数据加密、压缩（如HTTPS加密）。</li>
+<li>应用层：直接面向用户的服务（如浏览器访问网页用HTTP协议）</li>
+</ol>
+<p><strong>TCP/IP四层模型</strong>（实际应用）：</p>
+<ol>
+<li><strong>网络接口层</strong>（物理+数据链路层）。</li>
+<li><strong>互联网层</strong>（网络层）。</li>
+<li><strong>传输层</strong>。</li>
+<li>应用层（会话+表示+应用层）</li>
+</ol>
+<h4 id="4-关键协议与地址"><a href="#4-关键协议与地址" class="headerlink" title="4. 关键协议与地址"></a><strong>4. 关键协议与地址</strong></h4><ul>
+<li><strong>IP地址</strong>：设备的“网络身份证”（如<code>192.168.1.1</code>），用于跨网络通信。</li>
+<li>MAC地址：网卡的“物理身份证”（如<code>00:1A:2B:3C:4D:5E</code>），用于局域网内通信</li>
+<li><strong>TCP</strong>：可靠传输协议（如文件下载），确保数据不丢失、不乱序。</li>
+<li>UDP：快速传输协议（如视频通话），允许少量丢包但延迟低</li>
+<li><strong>HTTP/HTTPS</strong>：网页访问协议（HTTP明文，HTTPS加密）。</li>
+<li>DNS：将域名（如<code>www.baidu.com</code>）转换为IP地址的“电话簿”</li>
+</ul>
+<h4 id="5-网络设备的作用"><a href="#5-网络设备的作用" class="headerlink" title="5. 网络设备的作用"></a><strong>5. 网络设备的作用</strong></h4><ul>
+<li><p>集线器（Hub）：无脑广播数据，所有设备共享一条“车道”，易拥堵</p>
+</li>
+<li><p>交换机（Switch）：智能转发数据，根据MAC地址精准送达，减少冲突</p>
+</li>
+<li><p>路由器（Router）：连接不同网络（如家里的Wi-Fi和互联网），通过IP地址选择最佳路径</p>
+</li>
+<li><p>防火墙（Firewall）：网络“保安”，监控进出流量，阻止恶意访问</p>
+</li>
+</ul>
+<h4 id="6-网络类型与拓扑结构"><a href="#6-网络类型与拓扑结构" class="headerlink" title="6. 网络类型与拓扑结构"></a><strong>6. 网络类型与拓扑结构</strong></h4><ul>
+<li>按范围分类：<ul>
+<li><strong>局域网（LAN）</strong>：小范围（如家庭、办公室）。</li>
+<li>广域网（WAN）：跨城市或国家（如跨国企业内网）</li>
+</ul>
+</li>
+<li>拓扑结构：<ul>
+<li><strong>星型</strong>：所有设备连到中心交换机（易管理，中心故障全瘫）。</li>
+<li>网状型：设备多路径连接（高可靠性，适合大型网络）</li>
+</ul>
+</li>
+</ul>
+<h4 id="7-数据传输过程"><a href="#7-数据传输过程" class="headerlink" title="7. 数据传输过程"></a><strong>7. 数据传输过程</strong></h4><ol>
+<li><strong>封装</strong>：数据从应用层到物理层，每层添加头部信息（如IP地址、端口号）。</li>
+<li><strong>传输</strong>：通过路由器、交换机逐跳转发。</li>
+<li>解封装：接收端从物理层到应用层逐层解析，还原原始数据</li>
+</ol>
+<p><strong>示例</strong>：发送微信消息时，数据会被打包成TCP段→IP数据包→数据帧，最终通过Wi-Fi信号传输 </p>
+<h4 id="8-关键性能指标"><a href="#8-关键性能指标" class="headerlink" title="8. 关键性能指标"></a><strong>8. 关键性能指标</strong></h4><ul>
+<li><strong>带宽</strong>：网络的“车道宽度”，单位Mbps（如100M宽带=每秒传输12.5MB数据）。</li>
+<li>时延：数据从发送到接收的总时间，包括发送时延、传播时延（光速限制）、处理时延</li>
+<li><strong>吞吐量</strong>：实际每秒传输的数据量（受网络拥堵影响）。</li>
+<li>RTT（往返时延）：数据从发送到确认返回的时间，影响实时应用（如游戏）</li>
+</ul>
+<h4 id="9-网络安全基础"><a href="#9-网络安全基础" class="headerlink" title="9. 网络安全基础"></a><strong>9. 网络安全基础</strong></h4><ul>
+<li><p><strong>加密</strong>：HTTPS、VPN对数据加密，防止窃听。</p>
+</li>
+<li><p><strong>防火墙</strong>：过滤非法访问（如黑客攻击）。</p>
+</li>
+<li><p>病毒与木马</p>
+<p>：通过漏洞入侵设备，需安装杀毒软件</p>
+</li>
+</ul>
+<h4 id="10-常见问题与误区"><a href="#10-常见问题与误区" class="headerlink" title="10. 常见问题与误区"></a><strong>10. 常见问题与误区</strong></h4><ul>
+<li>“IP地址和MAC地址有什么区别？”<ul>
+<li>IP地址是逻辑地址，随网络环境变化（如手机连不同Wi-Fi）；MAC地址是物理地址，出厂固定</li>
+</ul>
+</li>
+<li>“Wi-Fi信号满格但网速慢？”<ul>
+<li>可能是带宽不足、信道拥堵或路由器性能瓶颈</li>
+</ul>
+</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://WhynotV.github.io">咕咕</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://whynotv.github.io/posts/7ff5.html">https://whynotv.github.io/posts/7ff5.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://WhynotV.github.io" target="_blank">Whynot'Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/bizhi.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.JPG" target="_blank"><img class="post-qr-code-img" src="/img/wechat.JPG" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.JPG" target="_blank"><img class="post-qr-code-img" src="/img/alipay.JPG" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/posts/41d3.html" title="哈希表"><img class="cover" src="/img/bizhi.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">哈希表</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/pingu.JPG" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">咕咕</div><div class="author-info__description">依旧在追自己的鹅</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/WhynotV"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">心怀信念，更美好的事情正纷至沓来。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%85%E6%98%BE%E6%98%93%E6%87%82%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5%E8%A7%A3%E6%9E%90"><span class="toc-number">1.</span> <span class="toc-text">浅显易懂的计算机网络核心概念解析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.1.</span> <span class="toc-text">1. 计算机网络是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%A0%B8%E5%BF%83%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86"><span class="toc-number">1.2.</span> <span class="toc-text">2. 核心组成部分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E7%BD%91%E7%BB%9C%E5%88%86%E5%B1%82%E7%BB%93%E6%9E%84%EF%BC%88OSI%E6%A8%A1%E5%9E%8B-vs-TCP-IP%E6%A8%A1%E5%9E%8B%EF%BC%89"><span class="toc-number">1.3.</span> <span class="toc-text">3. 网络分层结构（OSI模型 vs TCP&#x2F;IP模型）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E5%85%B3%E9%94%AE%E5%8D%8F%E8%AE%AE%E4%B8%8E%E5%9C%B0%E5%9D%80"><span class="toc-number">1.4.</span> <span class="toc-text">4. 关键协议与地址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">1.5.</span> <span class="toc-text">5. 网络设备的作用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E7%BD%91%E7%BB%9C%E7%B1%BB%E5%9E%8B%E4%B8%8E%E6%8B%93%E6%89%91%E7%BB%93%E6%9E%84"><span class="toc-number">1.6.</span> <span class="toc-text">6. 网络类型与拓扑结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E8%BF%87%E7%A8%8B"><span class="toc-number">1.7.</span> <span class="toc-text">7. 数据传输过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-%E5%85%B3%E9%94%AE%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="toc-number">1.8.</span> <span class="toc-text">8. 关键性能指标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%9F%BA%E7%A1%80"><span class="toc-number">1.9.</span> <span class="toc-text">9. 网络安全基础</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E8%AF%AF%E5%8C%BA"><span class="toc-number">1.10.</span> <span class="toc-text">10. 常见问题与误区</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/7ff5.html" title="计算机网络核心概念"><img src="/img/bizhi.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计算机网络核心概念"/></a><div class="content"><a class="title" href="/posts/7ff5.html" title="计算机网络核心概念">计算机网络核心概念</a><time datetime="2025-03-09T06:56:43.000Z" title="发表于 2025-03-09 14:56:43">2025-03-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/41d3.html" title="哈希表"><img src="/img/bizhi.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="哈希表"/></a><div class="content"><a class="title" href="/posts/41d3.html" title="哈希表">哈希表</a><time datetime="2025-03-06T07:35:00.000Z" title="发表于 2025-03-06 15:35:00">2025-03-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/ee05.html" title="哈希链表"><img src="/img/bizhi.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="哈希链表"/></a><div class="content"><a class="title" href="/posts/ee05.html" title="哈希链表">哈希链表</a><time datetime="2025-03-04T08:09:47.000Z" title="发表于 2025-03-04 16:09:47">2025-03-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/ccb8.html" title="毕设-智慧图书管理系统"><img src="/img/bizhi.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="毕设-智慧图书管理系统"/></a><div class="content"><a class="title" href="/posts/ccb8.html" title="毕设-智慧图书管理系统">毕设-智慧图书管理系统</a><time datetime="2025-02-23T07:02:03.000Z" title="发表于 2025-02-23 15:02:03">2025-02-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/d435.html" title="技巧提升"><img src="/img/bizhi.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="技巧提升"/></a><div class="content"><a class="title" href="/posts/d435.html" title="技巧提升">技巧提升</a><time datetime="2024-09-18T03:43:55.000Z" title="发表于 2024-09-18 11:43:55">2024-09-18</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By 咕咕</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><div class="aplayer no-destroy" data-id="10165643249" data-server="netease" data-type="playlist"   data-order="list" data-fixed="true" data-preload="auto" data-autoplay="false" data-mutex="true" ></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    if(parent_div_git) {
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var qweather_key = 'f752b837d0fb4629b883abfe289c10f9';
+  var gaud_map_key = '0f289e044218137dce84f4fb7215d56c';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '112.982279,28.19409';
+  var clock_default_rectangle_enable = 'false';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script><script data-pjax src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.js"></script><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v5.4.0" title=""><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px" data-title="主题版本Butterfly_v4.2.2" title=""><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" alt=""/></a><a class="github-badge" target="_blank" href="https://www.jsdelivr.com/" style="margin-inline:5px" data-title="本站使用JsDelivr为静态资源提供CDN加速" title=""><img src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&amp;logo=jsDelivr" alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站项目由Github托管" title=""><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" alt=""/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title=""><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" alt=""/></a></p>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="/js/runtime/runtime.min.js"></script><script async src="/js/ali_font.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '1.5s');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '30');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('flink-list-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__flipInY');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('flink-list-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__animated');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('article-sort-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__slideInRight');
+    arr[i].setAttribute('data-wow-duration', '1.5s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('site-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__flipInY');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('site-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__animated');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/wow_init.js"></script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body></html>

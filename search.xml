@@ -474,9 +474,9 @@
       
         <tags>
             
-            <tag> 编程 </tag>
-            
             <tag> 技术 </tag>
+            
+            <tag> 编程 </tag>
             
         </tags>
       
@@ -501,9 +501,9 @@
       
         <tags>
             
-            <tag> 编程 </tag>
-            
             <tag> 技术 </tag>
+            
+            <tag> 编程 </tag>
             
         </tags>
       
@@ -594,33 +594,11 @@
     
     
     <entry>
-      <title>Gallery</title>
-      <link href="/Gallery/index.html"/>
-      <url>/Gallery/index.html</url>
-      
-        <content type="html"><![CDATA[<div class="gallery-group-main"><figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='https://i.loli.net/2019/11/10/T7Mu8Aod3egmC4Q.png' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">壁紙</div>  <p>收藏的一些壁紙</p>  <a href='/Gallery/wallpaper/'></a>  </figcaption>  </figure>  <figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='https://i.loli.net/2019/12/25/8t97aVlp4hgyBGu.jpg' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">漫威</div>  <p>關於漫威的圖片</p>  <a href='/Gallery/marvel/'></a>  </figcaption>  </figure>  <figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='https://i.loli.net/2019/12/25/hOqbQ3BIwa6KWpo.jpg' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">DC</div>  <p>關於DC的圖片</p>  <a href='/Gallery/dc/'></a>  </figcaption>  </figure>  </div>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>DC</title>
       <link href="//Gallery/dc/index.html"/>
       <url>//Gallery/dc/index.html</url>
       
         <content type="html"><![CDATA[<div class="gallery-container" data-type="data" data-button="">      <div class="gallery-data">[{"url":"https://raw.githubusercontent.com/WhynotV/tuchuang/main/img/wallpaper.jfif","alt":""},{"url":"https://raw.githubusercontent.com/WhynotV/tuchuang/main/img/image%20(4).png","alt":""},{"url":"https://raw.githubusercontent.com/WhynotV/tuchuang/main/img/image%20(2).png","alt":""},{"url":"https://raw.githubusercontent.com/WhynotV/tuchuang/main/img/image%20(3).png","alt":""}]</div>      <div class="gallery-items">      </div>    </div>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>分类</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -638,11 +616,11 @@
     
     
     <entry>
-      <title></title>
-      <link href="/css/equipment.css"/>
-      <url>/css/equipment.css</url>
+      <title>友链</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
       
-        <content type="html"><![CDATA[#icat-equipment {  padding-bottom: 12px;}#icat-equipment > h2 {  margin: 20px 7px 0;}#icat-equipment .equipment-desc {  margin: 0 7px;  color: var(--icat-secondtext);}#icat-equipment .equipment {  display: flex;  flex-wrap: wrap;  padding: 10px 0 0;  gap: 16px;}#icat-equipment .equipment > .icat-equipment-box {  border: 1px solid var(--icat-secondbg);  background: var(--icat-card-bg);  width: calc(100% / 4 - 12px); /* 25% - 12px */  border-radius: 12px;  overflow: hidden;  min-height: 400px;  position: relative;}@media screen and (max-width: 1200px) {  #icat-equipment .equipment > .icat-equipment-box {    width: calc(100% / 2 - 12px); /* 50% - 12px */  }}@media screen and (max-width: 768px) {  #icat-equipment .equipment > .icat-equipment-box {    width: 100%;  }}#icat-equipment .equipment .icat-equipment-box .icat-equipment-content {  padding: 16px;}#icat-equipment .equipment .icat-equipment-box .icat-equipment-content .icat-equipment-name {  color: var(--icat-fontcolor);  font-size: 18px;  font-weight: bold;  line-height: 1;  margin-bottom: 8px;  white-space: nowrap;  overflow: hidden;  text-overflow: ellipsis;}#icat-equipment .equipment .icat-equipment-box .icat-equipment-content .icat-equipment-custom {  font-size: 12px;  color: var(--icat-secondtext);  line-height: 1;  margin-bottom: 12px;  white-space: nowrap;  overflow: hidden;  text-overflow: ellipsis;}#icat-equipment .equipment .icat-equipment-box .icat-equipment-content .icat-equipment-opinion {  line-height: 20px;  color: var(--icat-secondtext);  height: 60px;  display: -webkit-box;  overflow: hidden;  -webkit-line-clamp: 3;  -webkit-box-orient: vertical;  margin-bottom: 16px;}#icat-equipment .equipment .icat-equipment-box .icat-equipment-content .icat-equipment-box-more {  display: flex;  justify-content: space-between;}#icat-equipment .equipment .icat-equipment-box .icat-equipment-content .icat-equipment-box-more a {  font-size: 12px;  background: var(--icat-gray-op);  color: var(--icat-fontcolor);  padding: 4px 12px;  border-radius: 6px;  letter-spacing: 1px;}#icat-equipment .equipment .icat-equipment-box .icat-equipment-content .icat-equipment-box-more a:hover {  color: var(--icat-white);  background: var(--icat-blue);  box-shadow: 0 8px 16px -4px var(--icat-black-op);}#icat-equipment .equipment .icat-equipment-box img {  min-width: 100%;  max-width: 100%;  height: 200px;  object-fit: cover;  animation: fadeIn 1s;  cursor: pointer;  transition: all .4s ease-in-out;}#icat-equipment .equipment .icat-equipment-box img:hover {  transform: scale(1.03);}@media screen and (max-width: 900px) {  #icat-equipment .equipment {    gap: 10px;  }  #icat-equipment .equipment > .icat-equipment-box {    width: calc(100% / 2 - 7px);  }}@media screen and (max-width: 768px) {  #icat-equipment .equipment {    gap: 8px;  }  #icat-equipment .equipment > .icat-equipment-box {    width: 100%;  }  #icat-equipment .equipment .icat-equipment-box img {    height: 220px; /* 220px改成auto了 */  }}]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -660,9 +638,9 @@
     
     
     <entry>
-      <title>友链</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
+      <title>分类</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -693,11 +671,33 @@
     
     
     <entry>
+      <title>Gallery</title>
+      <link href="/Gallery/index.html"/>
+      <url>/Gallery/index.html</url>
+      
+        <content type="html"><![CDATA[<div class="gallery-group-main"><figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='https://i.loli.net/2019/11/10/T7Mu8Aod3egmC4Q.png' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">壁紙</div>  <p>收藏的一些壁紙</p>  <a href='/Gallery/wallpaper/'></a>  </figcaption>  </figure>  <figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='https://i.loli.net/2019/12/25/8t97aVlp4hgyBGu.jpg' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">漫威</div>  <p>關於漫威的圖片</p>  <a href='/Gallery/marvel/'></a>  </figcaption>  </figure>  <figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='https://i.loli.net/2019/12/25/hOqbQ3BIwa6KWpo.jpg' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">DC</div>  <p>關於DC的圖片</p>  <a href='/Gallery/dc/'></a>  </figcaption>  </figure>  </div>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>wallpaper</title>
       <link href="//Gallery/wallpaper/index.html"/>
       <url>//Gallery/wallpaper/index.html</url>
       
         <content type="html"><![CDATA[<div class="gallery-container" data-type="data" data-button="">      <div class="gallery-data">[{"url":"https://raw.githubusercontent.com/WhynotV/tuchuang/main/img/bizhi.jpg","alt":""},{"url":"https://raw.githubusercontent.com/WhynotV/tuchuang/main/img/%E7%99%BD%E6%97%A5%E6%A2%A6%E6%83%B3%E5%AE%B6p3.png","alt":""},{"url":"https://raw.githubusercontent.com/WhynotV/tuchuang/main/img/%E7%99%BD%E6%97%A5%E6%A2%A6%E6%83%B3%E5%AE%B6p2.png","alt":""},{"url":"https://raw.githubusercontent.com/WhynotV/tuchuang/main/img/%E7%99%BD%E6%97%A5%E6%A2%A6%E6%83%B3%E5%AE%B6p1.png","alt":""}]</div>      <div class="gallery-items">      </div>    </div>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/js/runtime/runtime.min.js"/>
+      <url>/js/runtime/runtime.min.js</url>
+      
+        <content type="html"><![CDATA[var now=new Date;function createtime(){var t=new Date("06/08/2024 00:00:00");now.setTime(now.getTime()+250);var e=(now-t)/1e3/60/60/24,a=Math.floor(e),n=(now-t)/1e3/60/60-24*a,r=Math.floor(n);1==String(r).length&&(r="0"+r);var s=(now-t)/1e3/60-1440*a-60*r,i=Math.floor(s);1==String(i).length&&(i="0"+i);var o=(now-t)/1e3-86400*a-3600*r-60*i,l=Math.round(o);1==String(l).length&&(l="0"+l);let g="";g=r<18&&r>=9?`<img class='boardsign' src='/img/badge/咕咕-认真学习中.svg' title='距离月入25k也就还差一个大佬带我~'><span class='textTip'> <br> 本站居然运行了 ${a} 天</span><span id='runtime'> ${r} 小时 ${i} 分 ${l} 秒 </span> <i class='fas fa-heartbeat' style='color:red'></i>`:`<img class='boardsign' src='/img/badge/咕咕-下班啦.svg' title='下班了就该开开心心的玩耍，嘿嘿~'><span class='textTip'> <br> 本站居然运行了 ${a} 天</span><span id='runtime'> ${r} 小时 ${i} 分 ${l} 秒 </span> <i class='fas fa-heartbeat' style='color:red'></i>`,document.getElementById("workboard")&&(document.getElementById("workboard").innerHTML=g)}setInterval(()=>{createtime()},250);]]></content>
       
     </entry>
     
@@ -716,10 +716,10 @@
     
     <entry>
       <title></title>
-      <link href="/js/runtime/runtime.min.js"/>
-      <url>/js/runtime/runtime.min.js</url>
+      <link href="/css/equipment.css"/>
+      <url>/css/equipment.css</url>
       
-        <content type="html"><![CDATA[var now=new Date;function createtime(){var t=new Date("06/08/2024 00:00:00");now.setTime(now.getTime()+250);var e=(now-t)/1e3/60/60/24,a=Math.floor(e),n=(now-t)/1e3/60/60-24*a,r=Math.floor(n);1==String(r).length&&(r="0"+r);var s=(now-t)/1e3/60-1440*a-60*r,i=Math.floor(s);1==String(i).length&&(i="0"+i);var o=(now-t)/1e3-86400*a-3600*r-60*i,l=Math.round(o);1==String(l).length&&(l="0"+l);let g="";g=r<18&&r>=9?`<img class='boardsign' src='/img/badge/咕咕-认真学习中.svg' title='距离月入25k也就还差一个大佬带我~'><span class='textTip'> <br> 本站居然运行了 ${a} 天</span><span id='runtime'> ${r} 小时 ${i} 分 ${l} 秒 </span> <i class='fas fa-heartbeat' style='color:red'></i>`:`<img class='boardsign' src='/img/badge/咕咕-下班啦.svg' title='下班了就该开开心心的玩耍，嘿嘿~'><span class='textTip'> <br> 本站居然运行了 ${a} 天</span><span id='runtime'> ${r} 小时 ${i} 分 ${l} 秒 </span> <i class='fas fa-heartbeat' style='color:red'></i>`,document.getElementById("workboard")&&(document.getElementById("workboard").innerHTML=g)}setInterval(()=>{createtime()},250);]]></content>
+        <content type="html"><![CDATA[#icat-equipment {  padding-bottom: 12px;}#icat-equipment > h2 {  margin: 20px 7px 0;}#icat-equipment .equipment-desc {  margin: 0 7px;  color: var(--icat-secondtext);}#icat-equipment .equipment {  display: flex;  flex-wrap: wrap;  padding: 10px 0 0;  gap: 16px;}#icat-equipment .equipment > .icat-equipment-box {  border: 1px solid var(--icat-secondbg);  background: var(--icat-card-bg);  width: calc(100% / 4 - 12px); /* 25% - 12px */  border-radius: 12px;  overflow: hidden;  min-height: 400px;  position: relative;}@media screen and (max-width: 1200px) {  #icat-equipment .equipment > .icat-equipment-box {    width: calc(100% / 2 - 12px); /* 50% - 12px */  }}@media screen and (max-width: 768px) {  #icat-equipment .equipment > .icat-equipment-box {    width: 100%;  }}#icat-equipment .equipment .icat-equipment-box .icat-equipment-content {  padding: 16px;}#icat-equipment .equipment .icat-equipment-box .icat-equipment-content .icat-equipment-name {  color: var(--icat-fontcolor);  font-size: 18px;  font-weight: bold;  line-height: 1;  margin-bottom: 8px;  white-space: nowrap;  overflow: hidden;  text-overflow: ellipsis;}#icat-equipment .equipment .icat-equipment-box .icat-equipment-content .icat-equipment-custom {  font-size: 12px;  color: var(--icat-secondtext);  line-height: 1;  margin-bottom: 12px;  white-space: nowrap;  overflow: hidden;  text-overflow: ellipsis;}#icat-equipment .equipment .icat-equipment-box .icat-equipment-content .icat-equipment-opinion {  line-height: 20px;  color: var(--icat-secondtext);  height: 60px;  display: -webkit-box;  overflow: hidden;  -webkit-line-clamp: 3;  -webkit-box-orient: vertical;  margin-bottom: 16px;}#icat-equipment .equipment .icat-equipment-box .icat-equipment-content .icat-equipment-box-more {  display: flex;  justify-content: space-between;}#icat-equipment .equipment .icat-equipment-box .icat-equipment-content .icat-equipment-box-more a {  font-size: 12px;  background: var(--icat-gray-op);  color: var(--icat-fontcolor);  padding: 4px 12px;  border-radius: 6px;  letter-spacing: 1px;}#icat-equipment .equipment .icat-equipment-box .icat-equipment-content .icat-equipment-box-more a:hover {  color: var(--icat-white);  background: var(--icat-blue);  box-shadow: 0 8px 16px -4px var(--icat-black-op);}#icat-equipment .equipment .icat-equipment-box img {  min-width: 100%;  max-width: 100%;  height: 200px;  object-fit: cover;  animation: fadeIn 1s;  cursor: pointer;  transition: all .4s ease-in-out;}#icat-equipment .equipment .icat-equipment-box img:hover {  transform: scale(1.03);}@media screen and (max-width: 900px) {  #icat-equipment .equipment {    gap: 10px;  }  #icat-equipment .equipment > .icat-equipment-box {    width: calc(100% / 2 - 7px);  }}@media screen and (max-width: 768px) {  #icat-equipment .equipment {    gap: 8px;  }  #icat-equipment .equipment > .icat-equipment-box {    width: 100%;  }  #icat-equipment .equipment .icat-equipment-box img {    height: 220px; /* 220px改成auto了 */  }}]]></content>
       
     </entry>
     
